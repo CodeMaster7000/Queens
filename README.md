@@ -1,6 +1,6 @@
 # Queens
 
-A strategic game, made with HTML, SCSS & JS, requiring the player to place 8 queens on an 8x8 square without them being able to capture one another.
+A strategic game, made with HTML, SCSS & JS, requiring the player to place 8 queens on an 8x8 board without them being able to capture one another.
 
 NOTE: Queens can capture each other if they are placed horizontally, vertically, or diagonally from each other:
 
