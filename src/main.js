@@ -21,7 +21,6 @@ function createBoard() {
 }
 function toggleQueen(e) {
   const square = e.currentTarget
-  
   if (square.textContent === '♕') {
     square.textContent = ''
   } else {
@@ -42,7 +41,6 @@ function checkBoard() {
     }
   })
   let conflict = false
-  
   for (let i = 0; i < queens.length; i++) {
     for (let j = i + 1; j < queens.length; j++) {
       if (
