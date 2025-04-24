@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  --bg-gradient-start: #f5f7fa;
+  --bg-gradient-end: #c3cfe2;
+  --text-color: #333;
+  --accent-color: #4a90e2;
+  --accent-color-hover: #3a78c2;
+  --queen-color: #e74c3c;
+  --light-square: #ecf0f1;
+  --dark-square: #bdc3c7;
+  --board-border: #34495e;
+  --size: 50px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  
+  @media (max-width: 500px) {
+    --size: 10vw;
+  }
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  width: 280px;
+  max-width: 90%;
+  text-align: center;
+}
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, var(--size));
+  grid-template-rows: repeat(8, var(--size));
+  gap: 0;
+  border: 3px solid var(--board-border);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 14px 20px -5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+}
+.square {
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  &:hover {
+    z-index: 2;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+  }
+}
+.light {
+  background-color: var(--light-square);
+  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+.dark {
+  background-color: var(--dark-square);
+  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+  &:hover {
+    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+  }
+}
+#message {
+  margin-top: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  &:hover {
+    background-color: var(--accent-color-hover);
+    transform: scale(1.02);
+  }
+}
